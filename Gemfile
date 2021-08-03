@@ -63,6 +63,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Rootstrap gems
+gem 'rubocop-rails'
 gem 'rubocop-rootstrap'
 gem 'reek'
 gem "rails_best_practices"
