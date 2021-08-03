@@ -66,3 +66,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'rubocop-rootstrap'
 gem 'reek'
 gem "rails_best_practices"
+
+gem 'devise'
+gem 'devise_token_auth'
