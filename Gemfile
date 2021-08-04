@@ -51,8 +51,8 @@ group :development do
   gem 'spring'
 
   # Rootstrap gems
-  gem 'brakeman'
   gem 'annotate'
+  gem 'brakeman'
 end
 
 group :test do
