@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # == Schema Information
 #
 # Table name: users
@@ -11,7 +9,7 @@
 #  confirmed_at           :datetime
 #  email                  :string
 #  encrypted_password     :string           default(""), not null
-#  gender                 :string           default(NULL), not null
+#  gender                 :integer          default("male"), not null
 #  image                  :string
 #  name                   :string
 #  nickname               :string
