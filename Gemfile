@@ -33,7 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Rootstrap gems
-  gem "rails_best_practices"
+  gem 'rails_best_practices'
   gem 'reek'
   gem 'rspec-rails', '~> 5.0.0'
   gem 'rubocop-rails'
