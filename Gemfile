@@ -33,7 +33,11 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 
   # Rootstrap gems
+  gem "rails_best_practices"
+  gem 'reek'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rubocop-rails'
+  gem 'rubocop-rootstrap'
 end
 
 group :development do
@@ -61,9 +65,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-# Rootstrap gems
-gem 'rubocop-rails'
-gem 'rubocop-rootstrap'
-gem 'reek'
-gem "rails_best_practices"
