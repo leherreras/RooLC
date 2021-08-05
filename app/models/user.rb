@@ -7,9 +7,9 @@
 #  confirmation_sent_at   :datetime
 #  confirmation_token     :string
 #  confirmed_at           :datetime
-#  email                  :string
+#  email                  :string           not null
 #  encrypted_password     :string           default(""), not null
-#  gender                 :integer          default("male"), not null
+#  gender                 :integer          not null
 #  image                  :string
 #  name                   :string
 #  nickname               :string
