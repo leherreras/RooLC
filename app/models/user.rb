@@ -35,6 +35,8 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :validatable
+
   include DeviseTokenAuth::Concerns::User
+  
   enum gender: [:male, :female]
 end
