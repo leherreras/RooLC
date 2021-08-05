@@ -9,7 +9,7 @@
 #  confirmed_at           :datetime
 #  email                  :string           not null
 #  encrypted_password     :string           default(""), not null
-#  gender                 :integer          not null
+#  gender                 :integer          default("male"), not null
 #  image                  :string
 #  name                   :string
 #  nickname               :string
@@ -37,6 +37,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :validatable
 
   include DeviseTokenAuth::Concerns::User
-  
+
   enum gender: [:male, :female]
 end

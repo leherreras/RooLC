@@ -1,8 +1,12 @@
-class Api::V1::RegistrationsController < DeviseTokenAuth::RegistrationsController
+module Api
+  module V1
+    class RegistrationsController < DeviseTokenAuth::RegistrationsController
 
-  private
+      private
 
-  def sign_up_params
-    params.permit(:gender, *params_for_resource(:sign_up))
+      def sign_up_params
+        params.permit(:gender, *params_for_resource(:sign_up))
+      end
+    end
   end
 end
