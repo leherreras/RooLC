@@ -1,2 +1,6 @@
-module Api::V1::RegistrationsHelper
+module Api
+  module V1
+    module RegistrationsHelper
+    end
+  end
 end

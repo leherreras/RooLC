@@ -1,6 +1,13 @@
 module Api
   module V1
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
+      def create
+        begin
+          super
+        rescue ArgumentError => e
+          render json: { 'message': e }.to_json, status: :not_acceptable
+        end
+      end
 
       private
 

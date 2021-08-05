@@ -55,7 +55,7 @@ group :development do
   gem 'brakeman'
 
   # Get email in browser
-  gem "letter_opener"
+  gem 'letter_opener'
 end
 
 group :test do

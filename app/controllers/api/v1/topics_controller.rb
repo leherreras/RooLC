@@ -54,7 +54,7 @@ module Api
       def destroy
         @topic.destroy
         respond_to do |format|
-          format.html { redirect_to topics_url, notice: "Topic was successfully destroyed." }
+          format.html { redirect_to api_v1_topics_url, notice: "Topic was successfully destroyed." }
           format.json { head :no_content }
         end
       end
@@ -63,7 +63,11 @@ module Api
 
       # Use callbacks to share common setup or constraints between actions.
       def set_topic
-        @topic = Topic.find(params[:id])
+        begin
+          @topic = Topic.find(params[:id])
+        rescue ActiveRecord::RecordNotFound => e
+          render json: { 'message': e }.to_json, status: :not_found
+        end
       end
 
       # Only allow a list of trusted parameters through.
