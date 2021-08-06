@@ -2,13 +2,14 @@ module Api
   module V1
     class TopicsController < ApplicationController
 
-      before_action :set_topic, only: %i[show edit update destroy]
+      # before_action :set_topic, only: %i[show edit update destroy]
 
       # GET /topics or /topics.json
       def index
         @topics = Topic.all
       end
 
+=begin
       # GET /topics/1 or /topics/1.json
       def show
       end
@@ -74,6 +75,7 @@ module Api
       def topic_params
         params.permit(:name, :image)
       end
+=end
     end
   end
 end
