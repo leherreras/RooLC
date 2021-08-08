@@ -36,7 +36,7 @@ jobs:
       - name: Set up Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.7.x
+          ruby-version: 2.7.2
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - name: Install dependent libraries
