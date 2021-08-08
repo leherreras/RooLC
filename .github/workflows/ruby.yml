@@ -42,11 +42,6 @@ jobs:
       - name: Install dependent libraries
         run: sudo apt install -y libpq-dev
 
-      - name: Bundle install
-        run: |
-          gem install bundler
-          bundle install --jobs 4 --retry 3
-
       - name: setup app
         env:
           RAILS_ENV: test
