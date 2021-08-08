@@ -17,6 +17,7 @@ versions:
   - rubocop-minitest
   - rubocop-performance: "1.5.1"
   - rubocop-rspec: "1.37.0"
+  - rubocop-rootstrap'
 
 # Description: RuboCop configuration file path relative to the workspace.
 # Valid options: A valid file path inside of the workspace.
@@ -63,4 +64,4 @@ check_scope: "modified"
 # This setting is not used if check_scope != 'modified'.
 # Valid options: 'origin/another_branch'
 # Default: 'origin/master'
-#base_branch: "origin/master"
+base_branch: "origin/master"
