@@ -9,8 +9,8 @@ module Api
           yield @resource if block_given?
 
           redirect_header_options = { account_confirmation_success: true }
-          render json: redirect_header_options, status: :ok
 
+          render json: redirect_header_options, status: :ok
         else
           render json: { message: I18n.t('api.errors.not_found') }, status: :not_found
         end
