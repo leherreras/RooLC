@@ -5,7 +5,7 @@ module Api
         # if a user is not found, return nil
         @resource = resource_class.with_reset_password_token(resource_params[:reset_password_token])
 
-        if @resource?.reset_password_period_valid?
+        if @resource&.reset_password_period_valid?
           token = @resource.create_token unless require_client_password_reset_token?
 
           @resource.skip_confirmation! if confirmable_enabled? && !@resource.confirmed_at
