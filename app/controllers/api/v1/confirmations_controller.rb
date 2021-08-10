@@ -1,7 +1,6 @@
 module Api
   module V1
     class ConfirmationsController < DeviseTokenAuth::ConfirmationsController
-
       def show
         @resource = resource_class.confirm_by_token(resource_params[:confirmation_token])
 
@@ -21,7 +20,6 @@ module Api
       def resource_params
         params.permit(:email, :confirmation_token, :config_name, :redirect_url, :config)
       end
-
     end
   end
 end

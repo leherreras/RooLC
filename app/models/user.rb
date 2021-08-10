@@ -38,5 +38,5 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
-  enum gender: [:male, :female]
+  enum gender: { male: 0, female: 1 }
 end

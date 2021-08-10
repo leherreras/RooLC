@@ -13,7 +13,6 @@ require 'rails_helper'
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
 RSpec.describe '/topics', type: :request do
-
   describe 'GET /index' do
     it 'renders a successful response' do
       Topic.all
@@ -21,5 +20,4 @@ RSpec.describe '/topics', type: :request do
       expect(response).to be_successful
     end
   end
-
 end

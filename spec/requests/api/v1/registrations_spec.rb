@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Registrations', type: :request do
-
   let(:valid_attributes) do
     { email: 'test@test.com', gender: 'male', password: '123456', password_confirmation: '123456' }
   end
@@ -27,5 +26,4 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
       end
     end
   end
-
 end
