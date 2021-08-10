@@ -8,9 +8,7 @@ module Api
         if @resource?.reset_password_period_valid?
           token = @resource.create_token unless require_client_password_reset_token?
 
-          # ensure that user is confirmed
           @resource.skip_confirmation! if confirmable_enabled? && !@resource.confirmed_at
-          # allow user to change password once without current_password
           @resource.allow_password_change = true if recoverable_enabled?
 
           @resource.save!
