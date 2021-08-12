@@ -1,7 +1,3 @@
-inherit_gem:
-  rubocop-rootstrap:
-    - config/rails_edge.yml
-
 AllCops:
   Exclude:
     - node_modules/**/*
