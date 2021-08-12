@@ -36,8 +36,9 @@ group :development, :test do
   gem 'rails_best_practices'
   gem 'reek'
   gem 'rspec-rails', '~> 5.0.0'
+  gem 'rubocop'
   gem 'rubocop-rails'
-  gem 'rubocop-rootstrap'
+  gem 'rubocop-rspec'
 end
 
 group :development do
