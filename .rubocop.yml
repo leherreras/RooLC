@@ -1,3 +1,61 @@
 inherit_gem:
   rubocop-rootstrap:
-    - config/rails.yml
+    - config/rails_edge.yml
+
+AllCops:
+  Exclude:
+    - node_modules/**/*
+    - vendor/**/*
+    - db/schema.rb
+    - config/initializers/pagy.rb
+    - bin/bundle
+    - bin/yarn
+Style/StringLiterals:
+  Exclude:
+    - config/**/*
+Layout/HashAlignment:
+  Exclude:
+    - lib/**/*
+Layout/LineLength:
+  Exclude:
+    - config/**/*
+    - db/migrate/**/*
+    - db/seeds.rb
+    - spec/factories/users.rb
+    - spec/requests/api/v1/**/*
+    - spec/models/**/*
+    - spec/channels/**/*
+    - app/services/fcm_service.rb
+    - app/models/message.rb
+Rails/Delegate:
+  Exclude:
+    - app/controllers/api/concerns/act_as_api_request.rb
+Rails/RakeEnvironment:
+  Exclude:
+    - lib/**/*
+Metrics/BlockLength:
+  Exclude:
+    - config/**/*
+    - lib/**/*
+Style/SymbolArray:
+  Exclude:
+    - config/**/*
+Style/ColonMethodCall:
+  Exclude:
+    - config/initializers/geokit_config.rb
+Style/HashSyntax:
+  Exclude:
+    - app/models/target.rb
+Rails/SaveBang:
+  Exclude:
+    - app/forms/**/*
+    - app/models/**/*
+Rails/Blank:
+  Exclude:
+    - app/models/message.rb
+Rails/EnvironmentVariableAccess:
+  Exclude:
+    - app/services/fcm_service.rb
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/**/*
