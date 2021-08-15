@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -24,7 +26,7 @@ module RooLC
         resource '*',
                  headers: :any,
                  expose: %w[access-token expiry token-type uid client],
-                 methods: [:get, :post, :options, :delete, :put]
+                 methods: %i[get post options delete put]
       end
     end
   end
