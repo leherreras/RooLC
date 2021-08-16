@@ -1,3 +1,14 @@
-inherit_gem:
-  rubocop-rootstrap:
-    - config/rails.yml
+AllCops:
+  Exclude:
+    - node_modules/**/*
+    - vendor/**/*
+    - db/schema.rb
+    - config/initializers/pagy.rb
+    - bin/bundle
+    - bin/yarn
+Style/StringLiterals:
+  Exclude:
+    - config/**/*
+Layout/HashAlignment:
+  Exclude:
+    - lib/**/*

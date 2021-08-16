@@ -1,0 +1,31 @@
+# .github/config/rubocop_linter_action.yml
+
+# Description: The name of the check that will be created.
+# Valid Options: A reasonably sized string.
+# Default: 'RuboCop Action'
+check_name: "RuboCop Results"
+
+versions:
+  - rubocop
+  - rubocop-rails
+  - rubocop-performance: "1.5.1"
+  - rubocop-rspec: "1.37.0"
+
+rubocop_config_path: ".rubocop.yml"
+
+# Run all cops enabled by configuration except this list.
+# Valid options: list of valid cop(s) and/or departments.
+# Default: nil
+# Resource: https://rubocop.readthedocs.io/en/stable/cops/
+rubocop_excluded_cops:
+  - "Style/FrozenStringLiteralComment"
+
+rubocop_fail_level: "warning"
+
+rubocop_force_exclusion: true
+
+bundle: false
+
+check_scope: "modified"
+
+base_branch: "origin/master"
