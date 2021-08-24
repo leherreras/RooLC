@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Api
   module V1
     class PasswordsController < DeviseTokenAuth::PasswordsController
@@ -16,7 +18,8 @@ module Api
           yield @resource if block_given?
 
           if require_client_password_reset_token?
-            redirect_to DeviseTokenAuth::Url.generate(@redirect_url, reset_password_token: resource_params[:reset_password_token])
+            redirect_to DeviseTokenAuth::Url.generate(@redirect_url,
+                                                      reset_password_token: resource_params[:reset_password_token])
           else
 
             render json: { 'access-token': token.token,

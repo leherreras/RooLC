@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # == Schema Information
 #
 # Table name: users
@@ -38,5 +40,5 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
-  enum gender: [:male, :female]
+  enum gender: %i[male female]
 end
