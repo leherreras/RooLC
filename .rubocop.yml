@@ -12,3 +12,15 @@ Style/StringLiterals:
 Layout/HashAlignment:
   Exclude:
     - lib/**/*
+
+Metrics/BlockLength:
+  Exclude:
+    - db/schema.rb
+  Max: 50
+
+Metrics/MethodLength:
+  Max: 25
+
+Metrics/AbcSize:
+  Exclude:
+    - db/migrate/**/*

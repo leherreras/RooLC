@@ -9,9 +9,9 @@ require 'rails/all'
 Bundler.require(*Rails.groups)
 
 module RooLC
-  # Root config for owr applications
+  # Root config for our applications
   class Application < Rails::Application
-    # Initialize configuration duser_spec.rbefaults for originally generated Rails version.
+    # Initialize configuration user_spec.rb defaults for originally generated Rails version.
     config.load_defaults 6.1
 
     config.generators do |g|

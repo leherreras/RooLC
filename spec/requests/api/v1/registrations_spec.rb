@@ -3,9 +3,11 @@
 require 'rails_helper'
 
 RSpec.describe 'Api::V1::Registrations', type: :request do
-  let(:email)                 { Faker::Internet.unique.email }
-  let(:password)              { Faker::Internet.password(min_length: 8) }
-  let(:gender)                { Faker::Gender.binary_type }
+  subject { post user_registration_path, params: params, as: :json }
+
+  let(:email) { Faker::Internet.unique.email }
+  let(:password) { Faker::Internet.password(min_length: 8) }
+  let(:gender) { Faker::Gender.binary_type }
 
   let(:params) do
     { email: email, gender: gender, password: password, password_confirmation: password }
@@ -14,18 +16,16 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new User' do
-        expect do
-          post '/api/v1', params: params
-        end.to change(User, :count).by(1)
+        expect(subject).to change(User, :count).by(1)
       end
 
       it 'successful response' do
-        post '/api/v1', params: params, as: :json
+        subject
         expect(response).to be_successful
       end
 
       it 'valid response with the params' do
-        post '/api/v1', params: params, as: :json
+        subject
         expect(json[:status]).to eq('success')
         expect(json[:data][:email]).to eq(email)
         expect(json[:data][:uid]).to eq(email)
@@ -37,7 +37,7 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
       it 'does not create a new User' do
         expect do
           params[:email] = 'invalid'
-          post '/api/v1', params: params
+          subject
         end.to change(User, :count).by(0)
       end
     end
