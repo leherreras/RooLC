@@ -16,7 +16,9 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
   describe 'POST /create' do
     context 'with valid parameters' do
       it 'creates a new User' do
-        expect(subject).to change(User, :count).by(1)
+        expect do
+          subject
+        end.to change(User, :count).by(1)
       end
 
       it 'successful response' do
