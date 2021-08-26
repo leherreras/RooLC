@@ -2,7 +2,6 @@
 
 module Api
   module V1
-    # Override the registration class to accept the gender parameter
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
       def create
         super

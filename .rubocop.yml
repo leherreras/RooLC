@@ -24,3 +24,6 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Exclude:
     - db/migrate/**/*
+
+Style/Documentation:
+  Enabled: false
