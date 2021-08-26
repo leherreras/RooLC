@@ -11,14 +11,22 @@ Things you may want to cover:
 
 * Configuration
 
-* Database creation
+* Database creation:
+
+`docker run --name roolc-db -e POSTGRES_PASSWORD=roolc -e POSTGRES_USER=RooLC -p 5432:5432 -d postgres`
 
 * Database initialization
 
 * How to run the test suite
 
+`rubocop`
+
+`bundle exec rspec`
+
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
+
+`rails s`
 
 * ...
