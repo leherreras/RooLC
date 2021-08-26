@@ -36,13 +36,25 @@ group :development do
   # Rootstrap gems
   gem 'annotate'
   gem 'brakeman'
+
+  # Get email in browser
+  gem 'letter_opener'
 end
 
 group :test do
   gem 'capybara', '>= 3.26'
   gem 'selenium-webdriver'
   gem 'webdrivers'
+
+  # Additional gems
+  gem 'factory_bot_rails'
+  gem 'faker'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+
+# Additional gems
+gem 'devise'
+gem 'devise_token_auth'
+gem 'rack-cors'
