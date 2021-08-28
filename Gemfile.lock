@@ -130,13 +130,9 @@ GEM
     marcel (1.0.1)
     method_source (1.0.0)
     mini_mime (1.1.0)
-    mini_portile2 (2.6.1)
     minitest (5.14.4)
     msgpack (1.4.2)
     nio4r (2.5.8)
-    nokogiri (1.12.1)
-      mini_portile2 (~> 2.6.1)
-      racc (~> 1.4)
     nokogiri (1.12.1-x86_64-linux)
       racc (~> 1.4)
     orm_adapter (0.5.0)
@@ -144,7 +140,7 @@ GEM
     parser (3.0.2.0)
       ast (~> 2.4.1)
     pg (1.2.3)
-    psych (3.1.0)
+    psych (3.3.0)
     public_suffix (4.0.6)
     puma (5.4.0)
       nio4r (~> 2.0)
@@ -225,16 +221,16 @@ GEM
       rspec-mocks (~> 3.10)
       rspec-support (~> 3.10)
     rspec-support (3.10.2)
-    rubocop (1.18.4)
+    rubocop (1.19.0)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
       rainbow (>= 2.2.2, < 4.0)
       regexp_parser (>= 1.8, < 3.0)
       rexml
-      rubocop-ast (>= 1.8.0, < 2.0)
+      rubocop-ast (>= 1.9.1, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.8.0)
+    rubocop-ast (1.10.0)
       parser (>= 3.0.1.1)
     rubocop-rails (2.11.3)
       activesupport (>= 4.2.0)
@@ -300,7 +296,6 @@ GEM
     zeitwerk (2.4.2)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
