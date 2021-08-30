@@ -6,7 +6,6 @@ RSpec.describe 'POST api/v1/users/sign_in', type: :request do
   subject { post user_session_path, params: params, as: :json }
 
   describe 'POST create' do
-
     let(:token) do
       {
         '70crCAAYmNP1xLkKKM09zA' =>

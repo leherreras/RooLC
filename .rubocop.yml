@@ -6,6 +6,7 @@ AllCops:
     - config/initializers/pagy.rb
     - bin/bundle
     - bin/yarn
+
 Style/StringLiterals:
   Exclude:
     - config/**/*
@@ -24,6 +25,3 @@ Metrics/MethodLength:
 Metrics/AbcSize:
   Exclude:
     - db/migrate/**/*
-
-Style/Documentation:
-  Enabled: false
