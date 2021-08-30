@@ -57,7 +57,7 @@ RSpec.describe 'POST api/v1/users/sign_in', type: :request do
       it 'does not return a successful response' do
         subject
 
-        expect(response).to have_http_status(:unauthorized)
+        expect(response).to be_unauthorized
       end
 
       it 'returns message error' do
