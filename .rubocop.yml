@@ -11,8 +11,6 @@ Style/StringLiterals:
   Exclude:
     - config/**/*
 Layout/HashAlignment:
-Documentation:
-  Enabled: false
   Exclude:
     - lib/**/*
 
