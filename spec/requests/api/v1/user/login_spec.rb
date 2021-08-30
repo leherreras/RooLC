@@ -43,7 +43,7 @@ RSpec.describe 'POST api/v1/users/sign_in', type: :request do
         expect(json[:data][:uid]).to eq(user.email)
       end
 
-      it 'returns a valid acces token' do
+      it 'returns a valid access token' do
         subject
 
         token = response.header['access-token']
