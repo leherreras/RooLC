@@ -36,10 +36,10 @@ RSpec.describe 'POST api/v1/users/sign_in', type: :request do
       it 'returns the user' do
         subject
 
-        expect(json[:data][:email]).to eq(user.email)
-        expect(json[:data][:gender]).to eq(user.gender)
-        expect(json[:data][:provider]).to eq('email')
-        expect(json[:data][:uid]).to eq(user.email)
+        expect(json['data']['email']).to eq(user.email)
+        expect(json['data']['gender']).to eq(user.gender)
+        expect(json['data']['provider']).to eq('email')
+        expect(json['data']['uid']).to eq(user.email)
       end
 
       it 'returns a valid access token' do
@@ -62,7 +62,7 @@ RSpec.describe 'POST api/v1/users/sign_in', type: :request do
       it 'returns message error' do
         subject
 
-        expect(json[:errors][0]).to eq('Invalid login credentials. Please try again.')
+        expect(json['errors'][0]).to eq('Invalid login credentials. Please try again.')
       end
     end
   end

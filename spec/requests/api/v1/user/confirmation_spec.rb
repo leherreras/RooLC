@@ -19,7 +19,7 @@ RSpec.describe 'Api::V1::Confirmation', type: :request do
       subject
 
       expect(response).to be_successful
-      expect(json[:account_confirmation_success]).to eq(true)
+      expect(json['account_confirmation_success']).to eq(true)
     end
 
     it 'confirms the user email' do
@@ -36,7 +36,7 @@ RSpec.describe 'Api::V1::Confirmation', type: :request do
       subject
 
       expect(response).to have_http_status(:not_found)
-      expect(json[:message]).to eq(I18n.t('api.errors.not_found'))
+      expect(json['message']).to eq(I18n.t('api.errors.not_found'))
     end
 
     it 'does not confirms the user email' do
