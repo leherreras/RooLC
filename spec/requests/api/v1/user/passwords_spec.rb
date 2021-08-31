@@ -24,7 +24,6 @@ RSpec.describe 'POST api/v1/passwords/', type: :request do
 
   context 'with invalid params' do
     let(:email) { 'bad@email.com' }
-    let(:failed_response) { 404 }
 
     it 'does not return a successful response' do
       subject
