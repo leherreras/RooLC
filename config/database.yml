@@ -2,20 +2,21 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
   host: localhost
   port: 5432
   username: postgres
   password: postgres
-
-development:
-  <<: *default
   database: RooLC_development
 test:
   <<: *default
+  host: localhost
+  port: 5432
+  username: postgres
+  password: postgres
   database: RooLC_test
 
 production:
   <<: *default
-  database: RooLC_production
-  username: RooLC
-  password: <%= ENV['ROOLC_DATABASE_PASSWORD'] %>
