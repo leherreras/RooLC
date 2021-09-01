@@ -13,7 +13,7 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
 
   describe 'POST /create' do
     context 'with valid parameters' do
-      it 'creates a new User' do
+      it 'creates a new User ' do
         expect { subject }.to change(User, :count).by(1)
       end
 
@@ -24,10 +24,10 @@ RSpec.describe 'Api::V1::Registrations', type: :request do
 
       it 'valid response with the params' do
         subject
-        expect(json[:status]).to eq('success')
-        expect(json[:data][:email]).to eq(user.email)
-        expect(json[:data][:uid]).to eq(user.email)
-        expect(json[:data][:gender]).to eq(user.gender)
+        expect(json['status']).to eq('success')
+        expect(json['data']['email']).to eq(user.email)
+        expect(json['data']['uid']).to eq(user.email)
+        expect(json['data']['gender']).to eq(user.gender)
       end
     end
 
