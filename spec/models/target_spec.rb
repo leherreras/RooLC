@@ -36,4 +36,9 @@ RSpec.describe Target, type: :model do
     expect(target.latitude).to be_present
     expect(target.longitude).to be_present
   end
+
+  describe 'associations' do
+    it { should belong_to(:user) }
+    it { should belong_to(:topic) }
+  end
 end
