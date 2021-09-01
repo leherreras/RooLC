@@ -7,7 +7,7 @@ RSpec.describe '/topics', type: :request do
   let!(:topics) { create_list(:topic, 3) }
 
   describe 'GET /index' do
-    it 'how many topics' do
+    it 'returns all topics' do
       subject
       expect(json.size).to eq(3)
     end

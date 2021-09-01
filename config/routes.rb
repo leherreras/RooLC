@@ -3,7 +3,7 @@
 Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
-      resources :topics
+      resources :topics, only: :index
     end
   end
   mount_devise_token_auth_for 'User', at: 'api/v1', controllers: {

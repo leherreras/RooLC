@@ -17,9 +17,8 @@
 require 'rails_helper'
 
 RSpec.describe Topic, type: :model do
-  let(:topic) { build(:topic) }
+  subject { build(:topic) }
 
-  it 'validates name presence' do
-    expect(topic.name).to be_present
-  end
+  it { should validate_presence_of(:name) }
+  it { should validate_uniqueness_of(:name) }
 end
