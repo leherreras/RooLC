@@ -26,16 +26,15 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Target < ApplicationRecord
-
   belongs_to :topic
   belongs_to :user
 
   validates :title, :latitude, :longitude, :radius, presence: true
   validates :radius, numericality: { greater_than: 0 }
 
-  acts_as_mappable :default_units => :meters,
-                   :default_formula => :sphere,
-                   :distance_field_name => :distance,
-                   :lat_column_name => :latitude,
-                   :lng_column_name => :longitude
+  acts_as_mappable default_units: :meters,
+                   default_formula: :sphere,
+                   distance_field_name: :distance,
+                   lat_column_name: :latitude,
+                   lng_column_name: :longitude
 end
