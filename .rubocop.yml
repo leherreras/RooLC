@@ -6,6 +6,10 @@ AllCops:
     - config/initializers/pagy.rb
     - bin/bundle
     - bin/yarn
+    - config/initializers/geokit_config.rb
+
+Style/Documentation:
+  Enabled: false
 
 Style/StringLiterals:
   Exclude:

@@ -58,6 +58,7 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # Additional gems
 gem 'devise'
 gem 'devise_token_auth'
+gem 'geokit-rails'
 gem 'rack-cors'
 
 # For Heroku

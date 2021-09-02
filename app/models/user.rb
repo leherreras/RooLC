@@ -40,5 +40,9 @@ class User < ActiveRecord::Base
 
   include DeviseTokenAuth::Concerns::User
 
+  validates :email, presence: true, uniqueness: true
+
+  has_many :targets, dependent: :destroy
+
   enum gender: %i[Male Female]
 end
