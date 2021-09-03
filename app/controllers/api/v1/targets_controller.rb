@@ -3,7 +3,7 @@
 module Api
   module V1
     class TargetsController < ApplicationController
-      # POST /targets or /targets.json 
+      # POST /targets or /targets.json
       def create
         @target = current_user.targets.create!(target_params)
       end
