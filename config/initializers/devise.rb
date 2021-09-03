@@ -2,6 +2,7 @@
 
 Devise.setup do |config|
   config.mailer_sender = 'leherreras@hotmail.com'
+  config.mailer = 'Devise::Mailer'
 
   require 'devise/orm/active_record'
 
