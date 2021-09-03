@@ -15,7 +15,7 @@ Rails.application.configure do
   config.eager_load = true
 
   # Full error reports are disabled and caching is turned on.
-  config.consider_all_requests_local       = false
+  config.consider_all_requests_local = false
   config.action_controller.perform_caching = true
 
   # Ensures that a master key has been made available in either ENV["RAILS_MASTER_KEY"]
@@ -91,9 +91,9 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name')
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
-    logger           = ActiveSupport::Logger.new($stdout)
+    logger = ActiveSupport::Logger.new($stdout)
     logger.formatter = config.log_formatter
-    config.logger    = ActiveSupport::TaggedLogging.new(logger)
+    config.logger = ActiveSupport::TaggedLogging.new(logger)
   end
 
   # Do not dump schema after migrations.
@@ -119,5 +119,15 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  config.action_mailer.default_url_options = { host: ENV['DEVISE_HOST'] }
+  config.action_mailer.default_url_options = { host: ENV['BASE_HOST'], protocol: 'https' }
+
+  ActionMailer::Base.smtp_settings = {
+    :address => ENV['MAIL_HOST'],
+    :port => ENV['MAIL_PORT'],
+    :authentication => :plain,
+    :user_name => ENV['MAIL_USERNAME'],
+    :password => ENV['MAIL_PASSWORD'],
+    :domain => ENV['BASE_HOST'],
+    :enable_starttls_auto => true
+  }
 end
