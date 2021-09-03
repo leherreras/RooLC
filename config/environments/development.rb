@@ -45,7 +45,15 @@ Rails.application.configure do
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
-  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
-  config.action_mailer.delivery_method = :letter_opener
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { host: 'localhost' }
+
+  ActionMailer::Base.smtp_settings = {
+    :address => 'smtp.office365.com',
+    :port => 589,
+    :authentication => :plain,
+    :user_name => 'leherreras@hotmail.com',
+    :password => 'game_hot_luis',
+    :domain => 'localhost',
+    :enable_starttls_auto => true
+  }
 end
