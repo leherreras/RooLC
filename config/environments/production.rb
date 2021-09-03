@@ -120,14 +120,14 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.action_mailer.default_url_options = { host: ENV['BASE_HOST'], protocol: 'https' }
-
+  config.action_mailer.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
-    :address => ENV['MAIL_HOST'],
-    :port => ENV['MAIL_PORT'],
-    :authentication => :plain,
-    :user_name => ENV['MAIL_USERNAME'],
-    :password => ENV['MAIL_PASSWORD'],
-    :domain => ENV['BASE_HOST'],
-    :enable_starttls_auto => true
+    address: ENV['MAIL_HOST'],
+    port: ENV['MAIL_PORT'],
+    authentication: :plain,
+    user_name: ENV['MAIL_USERNAME'],
+    password: ENV['MAIL_PASSWORD'],
+    domain: ENV['BASE_HOST'],
+    enable_starttls_auto: true
   }
 end
