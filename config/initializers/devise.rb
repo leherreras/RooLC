@@ -2,6 +2,7 @@
 
 Devise.setup do |config|
   config.mailer_sender = ENV['MAIL_USERNAME']
+  config.mailer = 'Devise::Mailer'
 
   require 'devise/orm/active_record'
 
