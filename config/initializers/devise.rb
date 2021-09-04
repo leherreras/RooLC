@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Devise.setup do |config|
-  config.mailer_sender = ENV['MAIL_USERNAME']
+  config.mailer_sender = ENV['MAIL_USERNAME'] || 'your@email.com'
   config.mailer = 'Devise::Mailer'
 
   require 'devise/orm/active_record'
