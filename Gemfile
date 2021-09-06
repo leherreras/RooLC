@@ -60,6 +60,7 @@ gem 'devise'
 gem 'devise_token_auth'
 gem 'geokit-rails'
 gem 'rack-cors'
+gem 'stripe'
 
 # For Heroku
 gem 'rexml'
