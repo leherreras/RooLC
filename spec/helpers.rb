@@ -12,7 +12,7 @@ module Helpers
     @auth_headers ||= user.create_new_auth_token
   end
 
-  def clear_hero
+  def restart_unique_generator
     Faker::UniqueGenerator.clear
   end
 end

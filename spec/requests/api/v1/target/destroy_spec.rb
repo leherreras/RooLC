@@ -11,7 +11,7 @@ RSpec.describe 'DELETE api/v1/targets', type: :request do
   let(:target_id) { target.id }
 
   after(:each) do
-    clear_hero
+    restart_unique_generator
   end
 
   context 'for an existing target' do
