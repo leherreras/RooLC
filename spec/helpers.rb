@@ -11,4 +11,8 @@ module Helpers
   def auth_headers
     @auth_headers ||= user.create_new_auth_token
   end
+
+  def clear_hero
+    Faker::UniqueGenerator.clear
+  end
 end

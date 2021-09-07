@@ -10,7 +10,7 @@ RSpec.describe '/topics', type: :request do
   let!(:other_user_targets) { create_list(:target, 3) }
 
   after(:each) do
-    Faker::UniqueGenerator.clear
+    clear_hero
   end
 
   describe 'GET /index' do

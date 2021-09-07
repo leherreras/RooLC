@@ -3,8 +3,10 @@
 require 'rails_helper'
 
 RSpec.describe '/topics', type: :request do
-  subject { get api_v1_topics_url }
+  let(:user) { create(:user) }
   let!(:topics) { create_list(:topic, 3) }
+
+  subject { get api_v1_topics_url, headers: auth_headers, as: :json }
 
   describe 'GET /index' do
     it 'returns all topics' do

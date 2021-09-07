@@ -28,8 +28,8 @@
 class Target < ApplicationRecord
   USER_MAX_TARGET_LIMIT = 3
 
-  belongs_to :topic
   belongs_to :user
+  belongs_to :topic
 
   validates :title, :latitude, :longitude, :radius, presence: true
   validates :radius, numericality: { greater_than: 0 }
