@@ -26,15 +26,27 @@
 #  fk_rails_...  (user_id => users.id)
 #
 class Target < ApplicationRecord
+  USER_MAX_TARGET_LIMIT = 3
+
   belongs_to :topic
   belongs_to :user
 
   validates :title, :latitude, :longitude, :radius, presence: true
   validates :radius, numericality: { greater_than: 0 }
 
+  validate :target_limit, on: :create
+
   acts_as_mappable default_units: :meters,
                    default_formula: :sphere,
                    distance_field_name: :distance,
                    lat_column_name: :latitude,
                    lng_column_name: :longitude
+
+  private
+
+  def target_limit
+    return unless user.targets.count >= USER_MAX_TARGET_LIMIT
+
+    errors.add(:targets, I18n.t('api.errors.target_limit'))
+  end
 end
