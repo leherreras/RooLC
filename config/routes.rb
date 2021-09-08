@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: 'json' } do
     namespace :v1 do
       resources :topics, only: :index
-      resources :targets, only: %i[create index]
+      resources :targets, only: %i[create index destroy]
     end
   end
   mount_devise_token_auth_for 'User', at: 'api/v1', controllers: {

@@ -2,7 +2,7 @@
 
 module Api
   module V1
-    class TargetsController < ApplicationController
+    class TargetsController < Api::V1::ApiController
       # POST /targets or /targets.json
       def create
         @target = current_user.targets.create!(target_params)
@@ -10,6 +10,10 @@ module Api
 
       def index
         @targets = current_user.targets
+      end
+
+      def destroy
+        current_user.targets.find(params[:id]).destroy!
       end
 
       private
